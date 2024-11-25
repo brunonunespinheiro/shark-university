@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shark University: Code and Marketing</title>
+    <style>
+        /* Estilo Global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            line-height: 1.6;
+            background-color: #f3f4f6;
+            color: #333;
+            padding-top: 80px; /* Espaço para o cabeçalho fixo */
+        }
+
+        h2, h3 {
+            color: #f8f2f8;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-family: 'Ubuntu', sans-serif;
+            margin: 10px auto;
+            max-width: 800px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        /* Cabeçalho */
+        #cabeçalho {
+            background-color: #4B0082;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #cabeçalho img {
+            width: 100px;
+        }
+
+        #cabeçalho ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        #cabeçalho ul li {
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        #cabeçalho ul li:hover {
+            color: #dcdcdc;
+        }
+
+        /* Hero Section */
+        #hero {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            background: linear-gradient(120deg, #6A5ACD, #4B0082);
+            color: white;
+        }
+
+        #hero div {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        #hero img {
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        #hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        #hero-buttons a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            background: white;
+            color: #4B0082;
+            transition: all 0.3s ease;
+        }
+
+        #hero-buttons a:hover {
+            background: #dcdcdc;
+        }
+
+        /* Seções Gerais */
+        .section {
+            margin: 50px 20px;
+            text-align: center;
+        }
+
+        .section-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            flex: 1 1 300px;
+            max-width: 300px;
+        }
+
+        .card img {
+            max-width: 200px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #4B0082;
+            color: white;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            color: #dcdcdc;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            #hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #hero img {
+                max-width: 100%;
+            }
+
+            #hero-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header id="cabeçalho">
+        <img src="Imagens/Logo - Shark University - white.png" alt="Logo Shark University">
+        <ul>
+            <li>Principal</li>
+            <li>Ajuda para escolher curso</li>
+            <li>Área do aluno</li>
+            <li>Cadastre-se</li>
+        </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div>
+            <h3>Torne-se <strong><em>Líder no Futuro</em></strong>:<br> Aprenda Tech &amp; Marketing com as referências do mercado!</h3>
+            <p>Na Shark University, preparamos você para liderar a próxima geração de inovação em tecnologia e marketing digital.</p>
+            <div id="hero-buttons">
+                <a href="aluno.html">Acessar Curso</a>
+                <a href="cadastre-se.html">Plano de Carreira</a>
+            </div>
+        </div>
+        <div>
+            <img src="Imagens/Imagem Header.png" alt="Imagem Header">
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="section">
+        <h2>Sobre a <em>Shark University</em></h2>
+        <p>Evolua sua carreira na área <strong>Tech</strong> e <strong>Marketing</strong> em uma escola referência no mercado. Com foco em tecnologia e marketing, a Shark University é referência global na formação de líderes, empreendedores e inovadores.</p>
+    </section>
+
+    <!-- Destaques -->
+    <section class="section">
+        <h2>Destaques</h2>
+        <div class="section-container">
+            <div class="card">
+                <p>Professores renomados no mercado tech e de marketing.</p>
+            </div>
+            <div class="card">
+                <p>Campus online interativo e acessível.</p>
+            </div>
+            <div class="card">
+                <p>Currículo atualizado com as últimas tendências do mercado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professores -->
+    <section class="section">
+        <h2>Conheça seus Mestres</h2>
+        <div class="section-container">
+            <div class="card">
+                <img src="Imagens/Foto - Prof. Mariana Silva.png" alt="Professora Mariana Silva">
+                <h3 style="color: #311a7f;"> Prof. Mariana Silva</h3>
+                <p><strong>Especialidade:</strong> Marketing Digital Estratégico</p>
+            </div>
+            <div class="card">
+                <img src="Imagens/Foto - Prof. Ricardo Mendes.png" alt="Professor Ricardo Mendes">
+                <h3 style="color: #311a7f;">Prof. Ricardo Mendes</h3>
+                <p><strong>Especialidade:</strong> Desenvolvimento Full Stack</p>
+            </div>
+            <div class="card">
+                <img src="Imagens/Foto - Prof. Laura Costa.png" alt="Professora Laura Costa">
+                <h3 style="color: #311a7f;">Prof. Laura Costa</h3>
+                <p><strong>Especialidade:</strong> Gestão de Tecnologia</p>
+            </div>
+            <div class="card">
+                <img src="Imagens/Foto - Prof. André Oliveira.png" alt="Professor André Oliveira">
+                <h3 style="color: #311a7f;">Prof. André Oliveira</h3>
+                <p><strong>Especialidade:</strong> Data Science</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cursos -->
+    <section class="section">
+        <h2 style="color: #311a7f;">Cursos e Programas</h2>
+        <div class="section-container">
+            <div class="card">
+                <p><strong>Bootcamp em Desenvolvimento Full Stack</strong></p>
+            </div>
+            <div class="card">
+                <p><strong>Especialização em Marketing Digital Avançado</strong></p>
+            </div>
+            <div class="card">
+                <p><strong>MBA em Tech Management</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="section">
+        <h2 style="color: #311a7f;">Histórias de Sucesso</h2>
+        <div class="section-container">
+            <div class="card">
+                <p>"Graças ao MBA da Shark, fui promovido a gerente de tecnologia em uma multinacional!"</p>
+                <p><strong>Lucas M.</strong></p>
+            </div>
+            <div class="card">
+                <p>"O curso de marketing me deu confiança para abrir minha própria agência!"</p>
+                <p><strong>Ana P.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conecte-se com o Mercado -->
+    <section class="section">
+        <h2 style="color: #311a7f;">Conecte-se com o Mercado</h2>
+        <p>
+            A Shark University mantém parcerias estratégicas com gigantes da tecnologia e do marketing,<br>
+            como Google, Meta, Amazon e HubSpot. Participe de eventos, hackathons e workshops exclusivos para nossos alunos.
+        </p>
+        <div class="section-container">
+            <div class="card">
+                <img src="Imagens/Logo - Google.png" alt="Google">
+            </div>
+            <div class="card">
+                <img src="Imagens/Logo - Meta.png" alt="Meta">
+            </div>
+            <div class="card">
+                <img src="Imagens/Logo - Amazon.png" alt="Amazon">
+            </div>
+            <div class="card">
+                <img src="Imagens/Logo - HubSpot.png" alt="HubSpot">
+            </div>
+        </div>
+
+        <br><h3><strong style="color: #311a7f;">Veja nossas parcerias</strong></h3>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Shark University. Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a href="https://www.linkedin.com/in/brunonunespinheiro/">Bruno Nunes Pinheiro</a></p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se | Shark University</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            background: linear-gradient(to bottom, #4B0082, #6A5ACD);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            height: 100%;
+        }
+
+        img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #d202ac;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background: white;
+            color: #4B0082;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="password"],
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="radio"],
+        form input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #d202ac;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #f8f2f8;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #512bd4;
+        }
+
+        h3, h4 {
+            margin: 15px 0 10px;
+        }
+
+        h4 {
+            font-size: 14px;
+        }
+
+        .additional-info {
+            font-size: 12px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="Imagens/Logo - Shark University - white.png" alt="Logo Shark University">
+    <form action="dashboard.html" method="GET">
+        <h2>Pronto para <strong><em>Mergulhar no Futuro?</em></strong></h2>
+        <p>Preencha os dados abaixo para criar sua conta no universo Shark.</p>
+
+        <label for="name">Nome completo:</label>
+        <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+        <label for="telefone">WhatsApp:</label>
+        <input type="text" id="telefone" name="telefone" placeholder="Digite seu número de WhatsApp" required>
+
+        <label for="senha">Crie uma senha:</label>
+        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+        <label for="curso">Escolha o seu curso:</label>
+        <select id="curso" name="curso" required>
+            <option value="curso 01">Bootcamp em Desenvolvimento Full Stack</option>
+            <option value="curso 02">Especialização em Marketing Digital Avançado</option>
+            <option value="curso 03">MBA em Tech Management</option>
+            <option value="curso 04">Marketing Digital</option>
+            <option value="curso 05">Design de Produtos Digitais</option>
+            <option value="curso 06">Programação No Code</option>
+        </select>
+
+        <h3>Modalidade:</h3>
+        <input type="radio" id="modalidade1" name="Modalidade" value="Presencial Noturno" required>
+        <label for="modalidade1">100% Presencial Noturno</label><br>
+        <input type="radio" id="modalidade2" name="Modalidade" value="Presencial Vespertino">
+        <label for="modalidade2">100% Presencial Vespertino</label><br>
+        <input type="radio" id="modalidade3" name="Modalidade" value="EAD">
+        <label for="modalidade3">100% EAD</label>
+
+        <h3>Ferramentas para o curso</h3>
+        <input type="checkbox" id="ferramenta1" name="Ferramentas" value="Calendário de gestão de rotina">
+        <label for="ferramenta1">Calendário de gestão de rotina de estudo: R$ 450,00/Mês</label><br>
+        <input type="checkbox" id="ferramenta2" name="Ferramentas" value="Roadmap da Programação">
+        <label for="ferramenta2">Roadmap da Programação Acadêmica: R$ 200,00/Mês</label>
+
+        <h4>Selecione as <strong><em>ferramentas</em></strong> para te ajudar a usufruir o curso!*</h4>
+        <p class="additional-info">*Há um custo adicional.</p>
+
+        <input type="submit" name="cadastro" value="Criar conta">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessar Área do Aluno | Shark University</title>
+    <style>
+        /* Estilo Global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            background: linear-gradient(to bottom, #4B0082, #6A5ACD);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #f8f2f8;
+        }
+
+        form {
+            background: white;
+            color: #4B0082;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: left;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #d202ac;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #f8f2f8;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #512bd4;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .forgot-password a {
+            color: #f8f2f8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+    <img src="Imagens/Logo - Shark University - white.png" alt="Logo Shark University">
+    <h2>Acesse a sua área de <strong><em>estudos</em></strong></h2>
+    <form action="dashboard.html" method="GET">
+        <label for="login">Login:</label>
+        <input type="text" id="login" name="login" placeholder="Digite seu login" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+        <input type="submit" value="Acessar agora">
+    </form>
+    <div class="forgot-password">
+        <h6>Esqueceu a senha? <a href="index.html">Clique aqui!</a></h6>
+    </div>
+</body>
+
+</html>

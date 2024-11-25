@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra seu curso ideal | Shark University</title>
+    <style>
+        /* Estilo Global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            background: linear-gradient(to bottom, #4B0082, #6A5ACD);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        h2, h3 {
+            margin-bottom: 10px;
+            color: #f8f2f8;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background: white;
+            color: #4B0082;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form textarea,
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #d202ac;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #f8f2f8;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #512bd4;
+        }
+
+        h4 {
+            margin-top: 20px;
+            color: #f8f2f8;
+            font-size: 16px;
+        }
+
+        .wave {
+            margin-top: 30px;
+            opacity: 0.7;
+        }
+
+    </style>
+</head>
+
+<body>
+    <img src="Imagens/Logo - Shark University - white.png" alt="Logo Shark University">
+
+    <h2>Fale com nossos atendentes <br>e descubra qual curso faz mais sentido para você hoje!</h2>
+    <h3>
+        Preencha o formulário abaixo e deixe nossos especialistas guiá-lo para a melhor decisão de acordo com seu perfil
+        e objetivos.
+    </h3>
+
+    <p>
+        Escolher o curso certo é uma decisão importante, e nós da Shark University estamos aqui para ajudar.
+        <br>Criamos um teste rápido e simples para conhecer melhor você e indicar o curso que mais se alinha com seus
+        interesses, habilidades e aspirações profissionais.<br><br>
+
+    </p>
+
+    <form action="dashboard.html" method="GET">
+        <label for="name">Qual seu nome?</label>
+        <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+
+        <label for="estado">Qual seu estado?</label>
+        <select id="estado" name="estado" required>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+        </select>
+
+        <label>Marque as áreas que você já teve contato:</label>
+        <input type="checkbox" name="áreas_de_interesse" value="Comunicação"> Comunicação<br>
+        <input type="checkbox" name="áreas_de_interesse" value="Programação"> Programação<br>
+        <input type="checkbox" name="áreas_de_interesse" value="Trabalho em equipe"> Trabalho em equipe<br>
+        <input type="checkbox" name="áreas_de_interesse" value="Desenvolvimento de projetos"> Desenvolvimento de
+        projetos<br>
+        <input type="checkbox" name="áreas_de_interesse" value="Gestão"> Gestão<br>
+        <input type="checkbox" name="áreas_de_interesse" value="Criatividade"> Criatividade<br>
+
+        <label for="objetivo">Qual é o seu principal objetivo ao fazer um curso conosco?</label>
+        <textarea id="objetivo" name="objetivo" rows="4" placeholder="Digite seu objetivo principal" required></textarea>
+
+        <label for="contato">Qual é o melhor e-mail ou telefone para entrarmos em contato com você?</label>
+        <input type="text" id="contato" name="contato" placeholder="Digite um e-mail ou telefone" required>
+
+        <input type="submit" value="Quero orientação">
+    </form>
+
+    <h4>
+        Não importa em qual estágio da sua jornada você esteja, a Shark University tem o curso certo para transformar
+        sua carreira. <br> Vamos juntos descobrir seu próximo desafio!
+    </h4>
+
+    <img src="imagens/wave2.png" alt="Wave Design" class="wave" width="150">
+</body>
+
+</html>

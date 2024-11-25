@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle | Shark University</title>
+    <style>
+        /* Estilo Global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            background: #f5f6fa;
+            color: #333;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Barra Lateral */
+        .sidebar {
+            width: 80px;
+            background: #4B0082; /* Cor principal da Shark University */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            transition: width 0.3s ease;
+        }
+
+        .sidebar:hover {
+            width: 250px;
+        }
+
+        .sidebar img {
+            width: 30px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            width: 100%;
+        }
+
+        .sidebar ul li {
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar ul li:hover {
+            background: #311A7F;
+        }
+
+        .sidebar ul li i {
+            margin-right: 10px;
+        }
+
+        .sidebar ul li span {
+            display: none;
+        }
+
+        .sidebar:hover ul li span {
+            display: inline;
+        }
+
+        /* Área Principal */
+        .main {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 18px;
+            color: #4B0082;
+        }
+
+        .widgets {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .widget h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #311A7F;
+        }
+
+        .widget p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Gráfico */
+        .graph {
+            background: #e0f7fa;
+            height: 150px;
+            border-radius: 8px;
+        }
+
+        /* Atividades Recentes */
+        .activities {
+            grid-column: span 1;
+        }
+
+        .activity {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #4B0082;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .activity-info {
+            font-size: 14px;
+        }
+
+        .activity-info p {
+            margin: 0;
+        }
+
+        .activity-info .time {
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .widgets {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Lateral -->
+    <div class="sidebar">
+        <img src="Imagens/Icon - Shark.png">
+        <ul>
+            <li><i> <img src="imagens/home.png"> </i> <span>Painel</span></li>
+            <li><i> <img src="imagens/learning.png"> </i> <span>Meus Cursos</span></li>
+            <li><i> <img src="imagens/rise.png"> </i> <span>Progresso</span></li>
+            <li><i> <img src="imagens/notification.png"> </i> <span>Notificações</span></li>
+            <li><i> <img src="imagens/chat.png"> </i> <span>Suporte</span></li>
+        </ul>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main">
+        <!-- Cabeçalho -->
+        <div class="header">
+            <h1>Painel de Controle - Shark University</h1>
+        
+        <a href="index.html" style="text-decoration: none; padding: 10px 20px; background: #4B0082; color: white; border-radius: 5px; font-weight: bold;">Sair</a>
+
+        </div>
+
+        <!-- Widgets -->
+        <div class="widgets">
+            <div class="widget">
+                <h3>Meus Cursos</h3>
+                <p>Atualmente matriculado em 3 cursos</p>
+            </div>
+            <div class="widget">
+                <h3>Progresso Total</h3>
+                <div class="graph"></div>
+                <p>80% de conclusão geral</p>
+            </div>
+            <div class="widget activities">
+                <h3>Atividades Recentes</h3>
+                <div class="activity">
+                    <div class="activity-icon">1</div>
+                    <div class="activity-info">
+                        <p>Concluiu o módulo 2 de Full Stack</p>
+                        <span class="time">Há 1 hora</span>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-icon">2</div>
+                    <div class="activity-info">
+                        <p>Iniciou a Especialização em Marketing</p>
+                        <span class="time">Há 3 horas</span>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-icon">3</div>
+                    <div class="activity-info">
+                        <p>Feedback recebido do professor</p>
+                        <span class="time">Há 1 dia</span>
+                    </div>
+                </div>
+            </div>
+            <div class="widget">
+                <h3>Próximo Desafio</h3>
+                <p>Entregar o projeto prático de Marketing Digital até sexta-feira.</p>
+            </div>
+            <div class="widget">
+                <h3>Notícias</h3>
+                <p>Nova trilha de aprendizado em "Data Science" disponível.</p>
+            </div>
+            <div class="widget">
+                <h3>Certificados</h3>
+                <p>Você tem 2 certificados prontos para download.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
