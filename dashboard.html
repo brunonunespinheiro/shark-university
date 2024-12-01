@@ -117,58 +117,67 @@
             color: #555;
         }
 
-        /* Gráfico */
-        .graph {
-            background: #e0f7fa;
-            height: 150px;
-            border-radius: 8px;
-        }
-
-        /* Atividades Recentes */
-        .activities {
-            grid-column: span 1;
-        }
-
-        .activity {
+        /* Estilo do Kanban */
+        .kanban-board {
             display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            padding: 10px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        .activity-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+        .kanban-column {
+            background: white;
+            border-radius: 8px;
+            width: 30%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .kanban-column h3 {
             background: #4B0082;
             color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            margin-right: 10px;
+            text-align: center;
+            padding: 10px;
         }
 
-        .activity-info {
-            font-size: 14px;
+        .kanban-items {
+            list-style: none;
+            padding: 15px;
         }
 
-        .activity-info p {
-            margin: 0;
+        .kanban-item {
+            background: #f0f0f5;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            color: #333;
+            cursor: grab;
         }
 
-        .activity-info .time {
-            font-size: 12px;
-            color: #888;
+        .kanban-item:active {
+            cursor: grabbing;
+        }
+
+        .placeholder {
+            background: #d1effe;
+            border: 2px dashed #4B0082;
+            height: 40px;
+            margin: 10px 0;
+            border-radius: 5px;
         }
 
         /* Responsividade */
         @media (max-width: 768px) {
             .widgets {
                 grid-template-columns: 1fr;
+            }
+
+            .kanban-board {
+                flex-direction: column;
+            }
+
+            .kanban-column {
+                width: 100%;
             }
         }
     </style>
@@ -193,8 +202,7 @@
         <div class="header">
             <h1>Painel de Controle - Shark University</h1>
         
-        <a href="index.html" style="text-decoration: none; padding: 10px 20px; background: #4B0082; color: white; border-radius: 5px; font-weight: bold;">Sair</a>
-
+            <a href="index.html" style="text-decoration: none; padding: 10px 20px; background: #4B0082; color: white; border-radius: 5px; font-weight: bold;">Sair</a>
         </div>
 
         <!-- Widgets -->
@@ -205,47 +213,83 @@
             </div>
             <div class="widget">
                 <h3>Progresso Total</h3>
-                <div class="graph"></div>
                 <p>80% de conclusão geral</p>
-            </div>
-            <div class="widget activities">
-                <h3>Atividades Recentes</h3>
-                <div class="activity">
-                    <div class="activity-icon">1</div>
-                    <div class="activity-info">
-                        <p>Concluiu o módulo 2 de Full Stack</p>
-                        <span class="time">Há 1 hora</span>
-                    </div>
-                </div>
-                <div class="activity">
-                    <div class="activity-icon">2</div>
-                    <div class="activity-info">
-                        <p>Iniciou a Especialização em Marketing</p>
-                        <span class="time">Há 3 horas</span>
-                    </div>
-                </div>
-                <div class="activity">
-                    <div class="activity-icon">3</div>
-                    <div class="activity-info">
-                        <p>Feedback recebido do professor</p>
-                        <span class="time">Há 1 dia</span>
-                    </div>
-                </div>
-            </div>
-            <div class="widget">
-                <h3>Próximo Desafio</h3>
-                <p>Entregar o projeto prático de Marketing Digital até sexta-feira.</p>
-            </div>
-            <div class="widget">
-                <h3>Notícias</h3>
-                <p>Nova trilha de aprendizado em "Data Science" disponível.</p>
             </div>
             <div class="widget">
                 <h3>Certificados</h3>
                 <p>Você tem 2 certificados prontos para download.</p>
             </div>
         </div>
+
+        <!-- Kanban -->
+        <div class="kanban-board">
+            <div class="kanban-column">
+                <h3>Backlog</h3>
+                <ul class="kanban-items">
+                    <li class="kanban-item" draggable="true">Revisar materiais</li>
+                    <li class="kanban-item" draggable="true">Planejar estudos</li>
+                </ul>
+            </div>
+            <div class="kanban-column">
+                <h3>Em Progresso</h3>
+                <ul class="kanban-items">
+                    <li class="kanban-item" draggable="true">Completar o módulo de JavaScript</li>
+                </ul>
+            </div>
+            <div class="kanban-column">
+                <h3>Concluído</h3>
+                <ul class="kanban-items">
+                    <li class="kanban-item" draggable="true">Assistir à aula introdutória</li>
+                </ul>
+            </div>
+        </div>
     </div>
+
+    <script>
+        const items = document.querySelectorAll('.kanban-item');
+        const columns = document.querySelectorAll('.kanban-column');
+
+        let draggedItem = null;
+
+        items.forEach(item => {
+            item.addEventListener('dragstart', () => {
+                draggedItem = item;
+                setTimeout(() => item.style.display = 'none', 0);
+            });
+
+            item.addEventListener('dragend', () => {
+                setTimeout(() => {
+                    draggedItem.style.display = 'block';
+                    draggedItem = null;
+                }, 0);
+            });
+        });
+
+        columns.forEach(column => {
+            column.addEventListener('dragover', e => {
+                e.preventDefault();
+                const placeholder = document.querySelector('.placeholder');
+                if (!placeholder) {
+                    const newPlaceholder = document.createElement('div');
+                    newPlaceholder.classList.add('placeholder');
+                    column.querySelector('.kanban-items').appendChild(newPlaceholder);
+                }
+            });
+
+            column.addEventListener('dragleave', () => {
+                const placeholder = document.querySelector('.placeholder');
+                if (placeholder) placeholder.remove();
+            });
+
+            column.addEventListener('drop', () => {
+                const placeholder = document.querySelector('.placeholder');
+                if (placeholder) {
+                    column.querySelector('.kanban-items').appendChild(draggedItem);
+                    placeholder.remove();
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
